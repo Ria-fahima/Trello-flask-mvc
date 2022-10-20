@@ -12,6 +12,7 @@ cowsay==5.0
 Flask==2.2.2
 Flask-Bcrypt==1.0.1
 Flask-JWT-Extended==4.4.4
+flask-marshmallow==0.14.0
 Flask-SQLAlchemy==3.0.2
 geographiclib==1.52
 geopy==2.2.0
