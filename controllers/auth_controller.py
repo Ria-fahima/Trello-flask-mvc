@@ -42,5 +42,5 @@ def authorize():
     stmt = db.select(User).filter_by(id = user_id)
     user = db.session.scalar(stmt)
     if not user.is_admin:
-        abort(description= {"error" :'You must be an admin'}, code = 401)
+        abort(401)
     
