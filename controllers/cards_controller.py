@@ -1,6 +1,6 @@
 from flask import Blueprint,request
 from datetime import date
-from db import db
+from init import db
 from models.card import Card, CardSchema
 
 cards_bp = Blueprint('cards', __name__, url_prefix='/cards')
