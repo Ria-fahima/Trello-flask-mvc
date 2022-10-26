@@ -75,4 +75,5 @@ def seed_db():
     ]
     
     db.session.add_all(cards)
+    db.session.commit()
     print('Tables seeded')
