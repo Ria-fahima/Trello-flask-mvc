@@ -2,8 +2,10 @@ from flask import Blueprint,request
 from datetime import date
 from init import db
 from models.card import Card, CardSchema
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required,get_jwt_identity
 from controllers.auth_controller import authorize
+
+
 cards_bp = Blueprint('cards', __name__, url_prefix='/cards')
 
 @cards_bp.route('/')
@@ -68,7 +70,8 @@ def create_card():
         description = request.json['description'],
         date = date.today(),
         status = request.json['status'],
-        priority = request.json['priority']
+        priority = request.json['priority'],
+        user_id = get_jwt_identity()
     )
     db.session.add(card)
     db.session.commit()
